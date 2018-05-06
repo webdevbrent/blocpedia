@@ -9,12 +9,10 @@
   </head>
 
   <body>
-  <% flash.each do |name, msg| %>
-  <div class="alert alert-<%= name %>">
-    <%= msg %>
-  </div>
-  <% end %>
-  <%= render 'navigation/navbar' %>
+  <%= render 'navigation/navbar' %>  
+  <div class="container">
+  <%= bootstrap_flash %>
     <%= yield %>
+  </div>  
   </body>
 </html>
