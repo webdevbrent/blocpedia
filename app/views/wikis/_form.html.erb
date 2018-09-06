@@ -7,10 +7,9 @@
     <%= f.input :title %>
     <%= f.input :body %>
     <%= f.input :private %>
-    <%= f.association :user, label_method: :email %>
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit %>
+    <%= f.button :submit, class: 'btn btn-primary' %>
   </div>
 <% end %>

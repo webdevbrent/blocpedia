@@ -1,6 +1,10 @@
-<h1>Editing Wiki</h1>
-
+<div class="row">
+<div class="col">
+    <h1>Editing Wiki</h1>
+</div>
+<div class="col">
+    <%= link_to 'Back', wikis_path, class: 'btn btn-warning float-right mt-2' %>
+</div>
+</div>
 <%= render 'form', wiki: @wiki %>
 
-<%= link_to 'Show', @wiki %> |
-<%= link_to 'Back', wikis_path %>
