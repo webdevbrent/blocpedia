@@ -4,8 +4,18 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  has_many :wikis
+
+  after_initialize :set_default_user_role
+
+  enum role: [:standard, :premium, :admin]
+
+  def set_default_user_role
+    self.role ||= :standard
+  end
+
   validates :email, presence: true
   validates :password, presence: true
 
-  has_many :wikis
+
 end
