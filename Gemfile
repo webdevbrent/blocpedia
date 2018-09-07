@@ -19,6 +19,8 @@ gem 'devise'
 
 gem 'pundit'
 
+gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
+
 gem 'coffee-rails', '~> 4.2'
 
 gem 'turbolinks', '~> 5'
