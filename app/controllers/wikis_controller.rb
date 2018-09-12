@@ -1,4 +1,5 @@
 class WikisController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_wiki, only: [:show, :edit, :update, :destroy]
 
   def index

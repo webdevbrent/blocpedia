@@ -6532,3 +6532,1875 @@ Completed 200 OK in 143ms (Views: 140.5ms | ActiveRecord: 0.8ms)
 
 
   [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "wikis" WHERE "wikis"."user_id" = ?[0m  [["user_id", 1]]
+Started GET "/wikis" for 127.0.0.1 at 2018-09-10 11:28:42 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.1.6) lib/active_record/migration.rb:576:in `check_pending!'
+activerecord (5.1.6) lib/active_record/migration.rb:553:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.6) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.6) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateAmounts (20180910150834)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "amounts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180910150834"]]
+  [1m[35m (4.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_wikis_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_wikis_on_user_id' AND type='index'
+[0m
+Started GET "/wikis" for 127.0.0.1 at 2018-09-10 11:29:07 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WikisController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering wikis/index.html.erb within layouts/application
+  [1m[36mWiki Load (0.2ms)[0m  [1m[34mSELECT "wikis".* FROM "wikis"[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered wikis/index.html.erb within layouts/application (71.8ms)
+  Rendered navigation/_navbar.html.erb (0.5ms)
+Completed 200 OK in 7576ms (Views: 7527.1ms | ActiveRecord: 5.5ms)
+
+
+Started GET "/charges/new" for 127.0.0.1 at 2018-09-10 11:30:39 -0400
+Processing by ChargesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.2ms)
+
+
+  
+NoMethodError (undefined method `name' for #<User:0x00000007280198>):
+  
+app/controllers/charges_controller.rb:29:in `new'
+Started GET "/charges/new" for 127.0.0.1 at 2018-09-10 11:31:01 -0400
+Processing by ChargesController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering charges/new.html.erb within layouts/application
+  Rendered charges/new.html.erb within layouts/application (0.8ms)
+Completed 500 Internal Server Error in 33ms (ActiveRecord: 0.7ms)
+
+
+  
+SyntaxError (/home/brent/Desktop/Code/blocpedia/app/views/charges/new.html.erb:7: syntax error, unexpected keyword_ensure, expecting keyword_end
+          ensure
+                ^):
+  
+app/views/charges/new.html.erb:7: syntax error, unexpected keyword_ensure, expecting keyword_end
+Started GET "/charges/new" for 127.0.0.1 at 2018-09-10 11:31:30 -0400
+Processing by ChargesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering charges/new.html.erb within layouts/application
+  Rendered charges/new.html.erb within layouts/application (0.6ms)
+  Rendered navigation/_navbar.html.erb (0.5ms)
+Completed 200 OK in 58ms (Views: 56.0ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/charges" for 127.0.0.1 at 2018-09-10 11:32:08 -0400
+Processing by ChargesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KCdjHs6QIpkscH4hWYl0tgzpInyfI1DWLw5SrTO1PLrnShkGO0pmMtRHUhZYJIBkY9q3cOnEa6i6fom3fflTnA==", "stripeToken"=>"tok_1D8rMvGZZqoeAZu1vp9p4BBK", "stripeTokenType"=>"card", "stripeEmail"=>"webdeveloperbrent@gmail.com"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 2246ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-09-10 11:32:10 -0400
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.3ms)
+  Rendered navigation/_navbar.html.erb (3.5ms)
+Completed 200 OK in 62ms (Views: 60.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/wikis" for 127.0.0.1 at 2018-09-10 11:33:33 -0400
+Processing by WikisController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering wikis/index.html.erb within layouts/application
+  [1m[36mWiki Load (0.2ms)[0m  [1m[34mSELECT "wikis".* FROM "wikis"[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered wikis/index.html.erb within layouts/application (74.4ms)
+  Rendered navigation/_navbar.html.erb (0.6ms)
+Completed 200 OK in 160ms (Views: 151.2ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/charges/new" for 127.0.0.1 at 2018-09-10 11:34:16 -0400
+Processing by ChargesController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering charges/new.html.erb within layouts/application
+  Rendered charges/new.html.erb within layouts/application (0.7ms)
+  Rendered navigation/_navbar.html.erb (0.6ms)
+Completed 200 OK in 83ms (Views: 81.6ms | ActiveRecord: 0.1ms)
+
+
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Started GET "/charges/new" for 127.0.0.1 at 2018-09-10 11:36:41 -0400
+Processing by ChargesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering charges/new.html.erb within layouts/application
+  Rendered charges/new.html.erb within layouts/application (0.6ms)
+  Rendered navigation/_navbar.html.erb (0.5ms)
+Completed 200 OK in 125ms (Views: 69.5ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/charges" for 127.0.0.1 at 2018-09-10 11:37:04 -0400
+Processing by ChargesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+92mPSOwxmtpn3yRCca61+4D7+MqVysq58L63Dglztk0sNwl1mqCwJGoUKYIa04FgTB671ywEFRysiHGdmmh/w==", "stripeToken"=>"tok_1D8rRhGZZqoeAZu1C9IOwmf3", "stripeTokenType"=>"card", "stripeEmail"=>"webdeveloperbrent@gmail.com"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 2103ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-09-10 11:37:06 -0400
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.2ms)
+  Rendered navigation/_navbar.html.erb (0.6ms)
+Completed 200 OK in 56ms (Views: 51.3ms | ActiveRecord: 0.2ms)
+
+
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Started GET "/charges/new" for 127.0.0.1 at 2018-09-10 11:38:31 -0400
+Processing by ChargesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering charges/new.html.erb within layouts/application
+  Rendered charges/new.html.erb within layouts/application (0.7ms)
+  Rendered navigation/_navbar.html.erb (0.5ms)
+Completed 200 OK in 105ms (Views: 69.9ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/charges" for 127.0.0.1 at 2018-09-10 11:39:01 -0400
+Processing by ChargesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"J5H5+xnyorULtH4de1NHmb/UBwEMfmKbmFqhWgSE1Bbo/IPj7CjmHvODUip6/rNL0OeSDXqZWeUNKnpASsi7MA==", "stripeToken"=>"tok_1D8rTaGZZqoeAZu1cESK0iVX", "stripeTokenType"=>"card", "stripeEmail"=>"webdeveloperbrent@gmail.com"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+Completed 422 Unprocessable Entity in 2912ms (ActiveRecord: 0.3ms)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Password can't be blank):
+  
+app/controllers/charges_controller.rb:19:in `create'
+Started POST "/charges" for 127.0.0.1 at 2018-09-10 11:40:19 -0400
+Processing by ChargesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"J5H5+xnyorULtH4de1NHmb/UBwEMfmKbmFqhWgSE1Bbo/IPj7CjmHvODUip6/rNL0OeSDXqZWeUNKnpASsi7MA==", "stripeToken"=>"tok_1D8rTaGZZqoeAZu1cESK0iVX", "stripeTokenType"=>"card", "stripeEmail"=>"webdeveloperbrent@gmail.com"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 708ms (ActiveRecord: 0.7ms)
+
+
+  
+Stripe::InvalidRequestError (You cannot use a Stripe token more than once: tok_1D8rTaGZZqoeAZu1cESK0iVX.):
+  
+app/controllers/charges_controller.rb:4:in `create'
+Started GET "/charges/new" for 127.0.0.1 at 2018-09-10 11:40:30 -0400
+Processing by ChargesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering charges/new.html.erb within layouts/application
+  Rendered charges/new.html.erb within layouts/application (0.6ms)
+  Rendered navigation/_navbar.html.erb (0.6ms)
+Completed 200 OK in 73ms (Views: 71.0ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/charges" for 127.0.0.1 at 2018-09-10 11:40:50 -0400
+Processing by ChargesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nLDXxxlOBApz+InfS9UVahZWENgQQP9Ig9L7KWrWGaVT3a3f7JRAoYvPpehKeOG4eWWF1GanxDYWoiAzJJp2gw==", "stripeToken"=>"tok_1D8rVMGZZqoeAZu1Nk8wylM8", "stripeTokenType"=>"card", "stripeEmail"=>"webdeveloperbrent@gmail.com"}
+  [1m[36mUser Load (3.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+Completed 422 Unprocessable Entity in 2091ms (ActiveRecord: 3.7ms)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Password is too short (minimum is 6 characters)):
+  
+app/controllers/charges_controller.rb:19:in `create'
+Started GET "/charges/new" for 127.0.0.1 at 2018-09-10 11:41:30 -0400
+Processing by ChargesController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering charges/new.html.erb within layouts/application
+  Rendered charges/new.html.erb within layouts/application (0.7ms)
+  Rendered navigation/_navbar.html.erb (0.6ms)
+Completed 200 OK in 91ms (Views: 73.4ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/charges" for 127.0.0.1 at 2018-09-10 11:41:48 -0400
+Processing by ChargesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"urX4z6TECQnLnvHIrjy21G7AyPIpKJPDrP0Y6J7BFGV12ILXUR5NojOp3f+vkUIGAfNd/l/PqL05jcPy0I17Qw==", "stripeToken"=>"tok_1D8rWHGZZqoeAZu1qmDdx0qn", "stripeTokenType"=>"card", "stripeEmail"=>"webdeveloperbrent@gmail.com"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (3.6ms)[0m  [1m[33mUPDATE "users" SET "role" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["role", 1], ["updated_at", "2018-09-10 15:41:50.867967"], ["id", 1]]
+  [1m[35m (11.6ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 2255ms (ActiveRecord: 15.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-09-10 11:41:50 -0400
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.2ms)
+  Rendered navigation/_navbar.html.erb (0.6ms)
+Completed 200 OK in 62ms (Views: 58.3ms | ActiveRecord: 0.2ms)
+
+
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Started GET "/rails/info/routes" for 127.0.0.1 at 2018-09-10 11:43:50 -0400
+Processing by Rails::InfoController#routes as HTML
+  Rendering /home/brent/.rvm/gems/ruby-2.4.1/gems/railties-5.1.6/lib/rails/templates/rails/info/routes.html.erb within layouts/application
+  Rendered collection of /home/brent/.rvm/gems/ruby-2.4.1/gems/actionpack-5.1.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb [28 times] (4.4ms)
+  Rendered /home/brent/.rvm/gems/ruby-2.4.1/gems/actionpack-5.1.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (5.3ms)
+  Rendered /home/brent/.rvm/gems/ruby-2.4.1/gems/railties-5.1.6/lib/rails/templates/rails/info/routes.html.erb within layouts/application (22.5ms)
+Completed 200 OK in 27ms (Views: 24.6ms | ActiveRecord: 0.0ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2018-09-10 11:45:17 -0400
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"PdabIKBJy3tH4LmZvT0k5ond1VXPs01B7u6xGJTvBNfyu+E4VZOP0L/Xla68kNA05u5AWblUdj97nmoC2qNr8Q=="}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 10ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-09-10 11:45:17 -0400
+Processing by HomeController#index as HTML
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-09-10 11:45:17 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (3.8ms)
+  Rendered users/sessions/new.html.erb within layouts/application (57.1ms)
+  Rendered navigation/_navbar.html.erb (0.7ms)
+Completed 200 OK in 123ms (Views: 120.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-09-10 11:45:27 -0400
+Processing by HomeController#index as HTML
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-09-10 11:45:27 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.8ms)
+  Rendered users/sessions/new.html.erb within layouts/application (15.8ms)
+  Rendered navigation/_navbar.html.erb (0.7ms)
+Completed 200 OK in 107ms (Views: 105.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2018-09-10 11:46:09 -0400
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VCstVs7xkfCd+HwRn4s8CZM1w+WTDFYL356oF5MERe5ZJpmuziSUJ2HGTAT7xxB3C8OyyX7TSju+an4/S+7mmA==", "user"=>{"email"=>"bp_standard@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "bp_standard@example.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["current_sign_in_at", "2018-09-10 15:46:10.086778"], ["sign_in_count", 2], ["updated_at", "2018-09-10 15:46:10.087360"], ["id", 1]]
+  [1m[35m (4.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 217ms (ActiveRecord: 5.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-09-10 11:46:10 -0400
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.3ms)
+  Rendered navigation/_navbar.html.erb (0.6ms)
+Completed 200 OK in 69ms (Views: 67.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-09-10 11:53:55 -0400
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.4ms)
+  Rendered navigation/_navbar.html.erb (4.5ms)
+Completed 500 Internal Server Error in 85ms (ActiveRecord: 0.3ms)
+
+
+  
+SyntaxError (/home/brent/Desktop/Code/blocpedia/app/views/navigation/_navbar.html.erb:16: syntax error, unexpected '=', expecting keyword_end
+'.freeze;         = link_to 'Edit', edit_user_reg
+                   ^):
+  
+app/views/navigation/_navbar.html.erb:16: syntax error, unexpected '=', expecting keyword_end
+app/views/layouts/application.html.erb:13:in `_app_views_layouts_application_html_erb___1638975965884185635_77279920'
+Started GET "/" for 127.0.0.1 at 2018-09-10 11:54:15 -0400
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.4ms)
+  Rendered navigation/_navbar.html.erb (0.8ms)
+Completed 200 OK in 57ms (Views: 56.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/edit.1" for 127.0.0.1 at 2018-09-10 11:55:02 -0400
+Processing by Devise::RegistrationsController#edit as 
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/registrations/edit.html.erb within layouts/application (9.8ms)
+  Rendered navigation/_navbar.html.erb (2.8ms)
+Completed 200 OK in 85ms (Views: 82.0ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2018-09-10 11:55:41 -0400
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"pLH1Bn7YiZLDklI9ZIKsCX3lADEK1lTO5M3y7LvaBeaP3t29yUyW6HvgI5Ln0B+b65HuEmaK+ECe3Sg+i90KVg=="}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 6ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-09-10 11:55:41 -0400
+Processing by HomeController#index as HTML
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-09-10 11:55:41 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.0ms)
+  Rendered users/sessions/new.html.erb within layouts/application (19.1ms)
+  Rendered navigation/_navbar.html.erb (0.8ms)
+Completed 200 OK in 82ms (Views: 81.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2018-09-10 11:55:45 -0400
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"DOBeT/aMXZM+0h30EAMNGchBFxaIGW4mhaDaWGgBnvxIJ2Jj6rPLFFzCivfW+6LD/OJH8qRunTvJvHoNBtrDcw==", "user"=>{"email"=>"bp_standard@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "bp_standard@example.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (5.3ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["current_sign_in_at", "2018-09-10 15:55:45.519395"], ["last_sign_in_at", "2018-09-10 15:46:10.086778"], ["sign_in_count", 3], ["updated_at", "2018-09-10 15:55:45.526877"], ["id", 1]]
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 217ms (ActiveRecord: 8.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-09-10 11:55:45 -0400
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.5ms)
+  Rendered navigation/_navbar.html.erb (0.9ms)
+Completed 200 OK in 93ms (Views: 89.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/edit.1" for 127.0.0.1 at 2018-09-10 11:55:49 -0400
+Processing by Devise::RegistrationsController#edit as 
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/registrations/edit.html.erb within layouts/application (4.0ms)
+  Rendered navigation/_navbar.html.erb (0.8ms)
+Completed 200 OK in 91ms (Views: 89.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/users/edit.1" for 127.0.0.1 at 2018-09-10 12:08:25 -0400
+Processing by Devise::RegistrationsController#edit as 
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/registrations/edit.html.erb within layouts/application (4.0ms)
+  Rendered navigation/_navbar.html.erb (4.7ms)
+Completed 200 OK in 238ms (Views: 217.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-09-10 12:08:28 -0400
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.5ms)
+  Rendered navigation/_navbar.html.erb (0.8ms)
+Completed 200 OK in 70ms (Views: 65.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/edit" for 127.0.0.1 at 2018-09-10 12:08:30 -0400
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/registrations/edit.html.erb within layouts/application (3.7ms)
+  Rendered navigation/_navbar.html.erb (0.8ms)
+Completed 200 OK in 72ms (Views: 71.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/edit" for 127.0.0.1 at 2018-09-10 12:12:00 -0400
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/registrations/edit.html.erb within layouts/application (2.1ms)
+  Rendered navigation/_navbar.html.erb (4.7ms)
+Completed 200 OK in 70ms (Views: 69.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/users/edit" for 127.0.0.1 at 2018-09-10 12:12:04 -0400
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/registrations/edit.html.erb within layouts/application (2.2ms)
+  Rendered navigation/_navbar.html.erb (5.2ms)
+Completed 200 OK in 74ms (Views: 73.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/users/edit" for 127.0.0.1 at 2018-09-10 12:12:05 -0400
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/registrations/edit.html.erb within layouts/application (2.2ms)
+  Rendered navigation/_navbar.html.erb (0.8ms)
+Completed 200 OK in 87ms (Views: 85.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-09-10 12:12:12 -0400
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.5ms)
+  Rendered navigation/_navbar.html.erb (0.7ms)
+Completed 200 OK in 99ms (Views: 97.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/edit" for 127.0.0.1 at 2018-09-10 12:12:14 -0400
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/registrations/edit.html.erb within layouts/application (2.6ms)
+  Rendered navigation/_navbar.html.erb (3.8ms)
+Completed 200 OK in 94ms (Views: 91.5ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2018-09-10 12:12:18 -0400
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"LZKy0sqlN43xq42QJCuFMwPwDFT20UXDK5E2A9BtjBqC5ZaNikT2+/fzS4JQ5Y8wuF/uFW5Xwzcr1P6sTFEQCg=="}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 7ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-09-10 12:12:18 -0400
+Processing by HomeController#index as HTML
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-09-10 12:12:18 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.7ms)
+  Rendered users/sessions/new.html.erb within layouts/application (9.8ms)
+  Rendered navigation/_navbar.html.erb (0.8ms)
+Completed 200 OK in 83ms (Views: 82.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2018-09-10 12:12:21 -0400
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered users/registrations/new.html.erb within layouts/application (3.6ms)
+  Rendered navigation/_navbar.html.erb (0.9ms)
+Completed 200 OK in 76ms (Views: 75.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-09-10 12:13:11 -0400
+Processing by HomeController#index as HTML
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-09-10 12:13:11 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (4.9ms)
+  Rendered users/sessions/new.html.erb within layouts/application (13.2ms)
+  Rendered navigation/_navbar.html.erb (0.9ms)
+Completed 200 OK in 90ms (Views: 89.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2018-09-10 12:13:17 -0400
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zjGJiDU7powdfPcv29WbgSqytbsOzQxHJl71iS+NwA7UcJufasgZPTKIultB6zEj0Wl4nutkIC+fbB3bCpfKwA==", "user"=>{"email"=>"bp_standard@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "bp_standard@example.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.6ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["current_sign_in_at", "2018-09-10 16:13:17.758809"], ["last_sign_in_at", "2018-09-10 15:55:45.519395"], ["sign_in_count", 4], ["updated_at", "2018-09-10 16:13:17.763830"], ["id", 1]]
+  [1m[35m (10.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 222ms (ActiveRecord: 13.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-09-10 12:13:17 -0400
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.4ms)
+  Rendered navigation/_navbar.html.erb (1.3ms)
+Completed 200 OK in 76ms (Views: 72.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/edit" for 127.0.0.1 at 2018-09-10 12:13:22 -0400
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/registrations/edit.html.erb within layouts/application (5.3ms)
+  Rendered navigation/_navbar.html.erb (8.3ms)
+Completed 200 OK in 77ms (Views: 75.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/users/edit" for 127.0.0.1 at 2018-09-10 12:15:15 -0400
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/registrations/edit.html.erb within layouts/application (7.0ms)
+  Rendered navigation/_navbar.html.erb (0.8ms)
+Completed 200 OK in 73ms (Views: 71.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/edit" for 127.0.0.1 at 2018-09-10 12:15:18 -0400
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/registrations/edit.html.erb within layouts/application (2.3ms)
+  Rendered navigation/_navbar.html.erb (0.7ms)
+Completed 200 OK in 90ms (Views: 88.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/edit" for 127.0.0.1 at 2018-09-10 12:15:19 -0400
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/registrations/edit.html.erb within layouts/application (8.4ms)
+  Rendered navigation/_navbar.html.erb (0.7ms)
+Completed 200 OK in 109ms (Views: 104.4ms | ActiveRecord: 0.5ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2018-09-10 12:16:52 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"UMUpN0uYs8/U5vUkCeiKmAbVi/SlzLuZfoqHPUl8jY0rkf/1hQMNsd2luU+zNeFuwIMbtqWrrVBp6nK31A3s3g=="}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 881ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-09-10 12:16:53 -0400
+Processing by HomeController#index as HTML
+Completed 401 Unauthorized in 4ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-09-10 12:16:53 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.0ms)
+  Rendered users/sessions/new.html.erb within layouts/application (47.8ms)
+  Rendered navigation/_navbar.html.erb (1.1ms)
+Completed 200 OK in 789ms (Views: 783.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2018-09-10 12:16:57 -0400
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FhwCwv/kCTg/rSlNxrtyowuYgX/QQr5lDONrot5vWnmex3ZhbAI10pKvnPxTfzUQk5Iqlad0eK2Btie7nLo2qg==", "user"=>{"email"=>"bp_standard@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "bp_standard@example.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["current_sign_in_at", "2018-09-10 16:16:57.762745"], ["last_sign_in_at", "2018-09-10 16:13:17.758809"], ["sign_in_count", 5], ["updated_at", "2018-09-10 16:16:57.763520"], ["id", 1]]
+  [1m[35m (10.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 232ms (ActiveRecord: 11.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-09-10 12:16:57 -0400
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.4ms)
+  Rendered navigation/_navbar.html.erb (0.6ms)
+Completed 200 OK in 117ms (Views: 113.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/edit" for 127.0.0.1 at 2018-09-10 12:17:02 -0400
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/registrations/edit.html.erb within layouts/application (7.6ms)
+  Rendered navigation/_navbar.html.erb (2.8ms)
+Completed 200 OK in 72ms (Views: 68.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/edit" for 127.0.0.1 at 2018-09-10 12:17:42 -0400
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/registrations/edit.html.erb within layouts/application (1.9ms)
+  Rendered navigation/_navbar.html.erb (0.6ms)
+Completed 200 OK in 86ms (Views: 84.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/edit" for 127.0.0.1 at 2018-09-10 12:17:44 -0400
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/registrations/edit.html.erb within layouts/application (1.9ms)
+  Rendered navigation/_navbar.html.erb (1.6ms)
+Completed 200 OK in 108ms (Views: 107.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/edit" for 127.0.0.1 at 2018-09-10 12:17:45 -0400
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/registrations/edit.html.erb within layouts/application (2.1ms)
+  Rendered navigation/_navbar.html.erb (0.5ms)
+Completed 200 OK in 66ms (Views: 64.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/users/edit" for 127.0.0.1 at 2018-09-10 12:17:46 -0400
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/registrations/edit.html.erb within layouts/application (1.8ms)
+  Rendered navigation/_navbar.html.erb (0.6ms)
+Completed 200 OK in 66ms (Views: 65.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/edit/1" for 127.0.0.1 at 2018-09-10 12:18:07 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/users/edit/1"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/users/edit" for 127.0.0.1 at 2018-09-10 12:19:37 -0400
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/registrations/edit.html.erb within layouts/application (2.6ms)
+  Rendered navigation/_navbar.html.erb (3.7ms)
+Completed 200 OK in 82ms (Views: 80.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/edit" for 127.0.0.1 at 2018-09-10 12:19:41 -0400
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/registrations/edit.html.erb within layouts/application (2.3ms)
+  Rendered navigation/_navbar.html.erb (0.5ms)
+Completed 200 OK in 83ms (Views: 81.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/users/edit" for 127.0.0.1 at 2018-09-10 12:20:06 -0400
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/registrations/edit.html.erb within layouts/application (2.2ms)
+  Rendered navigation/_navbar.html.erb (0.6ms)
+Completed 200 OK in 62ms (Views: 60.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/users/edit" for 127.0.0.1 at 2018-09-10 12:20:36 -0400
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/registrations/edit.html.erb within layouts/application (2.2ms)
+  Rendered navigation/_navbar.html.erb (0.5ms)
+Completed 200 OK in 76ms (Views: 72.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/edit" for 127.0.0.1 at 2018-09-10 12:21:02 -0400
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/registrations/edit.html.erb within layouts/application (2.3ms)
+  Rendered navigation/_navbar.html.erb (0.6ms)
+Completed 200 OK in 80ms (Views: 79.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/users/edit" for 127.0.0.1 at 2018-09-10 12:21:04 -0400
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/registrations/edit.html.erb within layouts/application (6.3ms)
+  Rendered navigation/_navbar.html.erb (2.1ms)
+Completed 200 OK in 57ms (Views: 56.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/users/edit" for 127.0.0.1 at 2018-09-10 12:22:35 -0400
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/registrations/edit.html.erb within layouts/application (2.3ms)
+  Rendered navigation/_navbar.html.erb (0.6ms)
+Completed 200 OK in 67ms (Views: 66.0ms | ActiveRecord: 0.1ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2018-09-10 12:22:38 -0400
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"n0xV5TDBgoGiHWYnMvI6GGmz54t34uyOdcjFw1XoY2kytHb6YVC7eNG9spjXAqEf+Qe32XLEdQkQaRzLuExJMA=="}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 7ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-09-10 12:22:38 -0400
+Processing by HomeController#index as HTML
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-09-10 12:22:38 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (5.0ms)
+  Rendered users/sessions/new.html.erb within layouts/application (12.6ms)
+  Rendered navigation/_navbar.html.erb (0.6ms)
+Completed 200 OK in 106ms (Views: 105.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2018-09-10 12:22:41 -0400
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"TI7UYWV/Sn50rZIvubN4kL/QpmQbjs5RCCGVe0iRehFDsQZ/6QW+RorRVCq9wC8Fh38ygfhda0XroCVFuO84aA==", "user"=>{"email"=>"bp_standard@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "bp_standard@example.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["current_sign_in_at", "2018-09-10 16:22:41.902237"], ["last_sign_in_at", "2018-09-10 16:16:57.762745"], ["sign_in_count", 6], ["updated_at", "2018-09-10 16:22:41.907365"], ["id", 1]]
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 203ms (ActiveRecord: 3.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-09-10 12:22:41 -0400
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.3ms)
+  Rendered navigation/_navbar.html.erb (0.6ms)
+Completed 200 OK in 71ms (Views: 68.3ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/users/edit" for 127.0.0.1 at 2018-09-10 12:22:44 -0400
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/registrations/edit.html.erb within layouts/application (2.2ms)
+  Rendered navigation/_navbar.html.erb (0.5ms)
+Completed 200 OK in 62ms (Views: 61.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/users/edit" for 127.0.0.1 at 2018-09-10 12:24:59 -0400
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/registrations/edit.html.erb within layouts/application (2.3ms)
+  Rendered navigation/_navbar.html.erb (0.7ms)
+Completed 200 OK in 78ms (Views: 76.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/edit" for 127.0.0.1 at 2018-09-10 12:26:28 -0400
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/registrations/edit.html.erb within layouts/application (6.8ms)
+  Rendered navigation/_navbar.html.erb (0.6ms)
+Completed 200 OK in 94ms (Views: 93.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/edit" for 127.0.0.1 at 2018-09-10 12:27:13 -0400
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/registrations/edit.html.erb within layouts/application (608.0ms)
+Completed 500 Internal Server Error in 614ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `simple_form' for #<#<Class:0x007fbabdf5a0f8>:0x007fbac8099338>
+Did you mean?  simple_format):
+    1: <h2>Edit <%= resource_name.to_s.humanize %></h2>
+    2: <%= simple_form(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+    3:   <%= devise_error_messages! %>
+    4:   <div class="form-control">
+    5:     <%= f.label :email %><br />
+  
+app/views/users/registrations/edit.html.erb:2:in `_app_views_users_registrations_edit_html_erb___675888237079326562_70220098346880'
+Started GET "/users/edit" for 127.0.0.1 at 2018-09-10 12:27:49 -0400
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/registrations/edit.html.erb within layouts/application (2.8ms)
+  Rendered navigation/_navbar.html.erb (1.3ms)
+Completed 200 OK in 106ms (Views: 104.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/users/edit" for 127.0.0.1 at 2018-09-10 12:30:00 -0400
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/registrations/edit.html.erb within layouts/application (9.0ms)
+  Rendered navigation/_navbar.html.erb (2.3ms)
+Completed 200 OK in 154ms (Views: 149.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users/edit" for 127.0.0.1 at 2018-09-10 12:33:02 -0400
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/registrations/edit.html.erb within layouts/application (2.6ms)
+  Rendered navigation/_navbar.html.erb (0.6ms)
+Completed 200 OK in 131ms (Views: 129.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/edit" for 127.0.0.1 at 2018-09-10 12:40:42 -0400
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/registrations/edit.html.erb within layouts/application (2.2ms)
+  Rendered navigation/_navbar.html.erb (0.6ms)
+Completed 200 OK in 77ms (Views: 75.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/edit" for 127.0.0.1 at 2018-09-10 12:40:49 -0400
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/registrations/edit.html.erb within layouts/application (6.5ms)
+  Rendered navigation/_navbar.html.erb (4.3ms)
+Completed 200 OK in 72ms (Views: 70.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/users/edit" for 127.0.0.1 at 2018-09-10 12:41:55 -0400
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/registrations/edit.html.erb within layouts/application (2.4ms)
+  Rendered navigation/_navbar.html.erb (0.6ms)
+Completed 200 OK in 73ms (Views: 70.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/edit" for 127.0.0.1 at 2018-09-10 12:42:40 -0400
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/registrations/edit.html.erb within layouts/application (0.8ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.2ms)
+
+
+  
+SyntaxError (/home/brent/Desktop/Code/blocpedia/app/views/users/registrations/edit.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+class: 'form-control' readonly );@output_buffer.safe_append=
+                              ^):
+  
+app/views/users/registrations/edit.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+Started GET "/users/edit" for 127.0.0.1 at 2018-09-10 12:43:08 -0400
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/registrations/edit.html.erb within layouts/application (0.8ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.2ms)
+
+
+  
+SyntaxError (/home/brent/Desktop/Code/blocpedia/app/views/users/registrations/edit.html.erb:6: syntax error, unexpected ')', expecting =>
+ss: 'form-control', readonly );@output_buffer.safe_append='
+                              ^
+/home/brent/Desktop/Code/blocpedia/app/views/users/registrations/edit.html.erb:35: syntax error, unexpected keyword_end, expecting ')'
+'.freeze; end 
+             ^
+/home/brent/Desktop/Code/blocpedia/app/views/users/registrations/edit.html.erb:44: syntax error, unexpected keyword_ensure, expecting ')'
+          ensure
+                ^
+/home/brent/Desktop/Code/blocpedia/app/views/users/registrations/edit.html.erb:46: syntax error, unexpected keyword_end, expecting ')'
+          end
+             ^):
+  
+app/views/users/registrations/edit.html.erb:6: syntax error, unexpected ')', expecting =>
+app/views/users/registrations/edit.html.erb:35: syntax error, unexpected keyword_end, expecting ')'
+app/views/users/registrations/edit.html.erb:44: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/users/registrations/edit.html.erb:46: syntax error, unexpected keyword_end, expecting ')'
+Started GET "/" for 127.0.0.1 at 2018-09-10 12:45:44 -0400
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.3ms)
+  Rendered navigation/_navbar.html.erb (0.6ms)
+Completed 200 OK in 58ms (Views: 56.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/edit" for 127.0.0.1 at 2018-09-10 12:45:47 -0400
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/registrations/edit.html.erb within layouts/application (5.1ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.1ms)
+
+
+  
+SyntaxError (/home/brent/Desktop/Code/blocpedia/app/views/users/registrations/edit.html.erb:6: syntax error, unexpected '}', expecting =>
+m-control', html: { readonly } );@output_buffer.safe_append=
+                              ^
+/home/brent/Desktop/Code/blocpedia/app/views/users/registrations/edit.html.erb:35: syntax error, unexpected keyword_end, expecting ')'
+'.freeze; end 
+             ^
+/home/brent/Desktop/Code/blocpedia/app/views/users/registrations/edit.html.erb:44: syntax error, unexpected keyword_ensure, expecting ')'
+          ensure
+                ^
+/home/brent/Desktop/Code/blocpedia/app/views/users/registrations/edit.html.erb:46: syntax error, unexpected keyword_end, expecting ')'
+          end
+             ^):
+  
+app/views/users/registrations/edit.html.erb:6: syntax error, unexpected '}', expecting =>
+app/views/users/registrations/edit.html.erb:35: syntax error, unexpected keyword_end, expecting ')'
+app/views/users/registrations/edit.html.erb:44: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/users/registrations/edit.html.erb:46: syntax error, unexpected keyword_end, expecting ')'
+Started GET "/users/edit" for 127.0.0.1 at 2018-09-10 12:46:09 -0400
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/registrations/edit.html.erb within layouts/application (5.7ms)
+  Rendered navigation/_navbar.html.erb (1.6ms)
+Completed 200 OK in 71ms (Views: 65.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/edit" for 127.0.0.1 at 2018-09-10 12:50:10 -0400
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/registrations/edit.html.erb within layouts/application (3.3ms)
+  Rendered navigation/_navbar.html.erb (0.6ms)
+Completed 200 OK in 82ms (Views: 80.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/users/edit" for 127.0.0.1 at 2018-09-10 12:50:31 -0400
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/registrations/edit.html.erb within layouts/application (7.2ms)
+  Rendered navigation/_navbar.html.erb (5.0ms)
+Completed 200 OK in 68ms (Views: 65.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/edit" for 127.0.0.1 at 2018-09-10 12:55:13 -0400
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/registrations/edit.html.erb within layouts/application (10.6ms)
+  Rendered navigation/_navbar.html.erb (0.5ms)
+Completed 200 OK in 86ms (Views: 84.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/users/edit" for 127.0.0.1 at 2018-09-10 12:56:03 -0400
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/registrations/edit.html.erb within layouts/application (8.5ms)
+  Rendered navigation/_navbar.html.erb (0.6ms)
+Completed 200 OK in 103ms (Views: 101.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/edit" for 127.0.0.1 at 2018-09-10 12:56:42 -0400
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/registrations/edit.html.erb within layouts/application (653.7ms)
+Completed 500 Internal Server Error in 658ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `Update' for #<SimpleForm::FormBuilder:0x007fbac43df0a0>):
+    26:   </div>
+    27: 
+    28:   <div class="form-group">
+    29:     <%= f.button "Update", class: 'btn btn-primary' %>
+    30:   </div>
+    31: <% end %>
+    32: 
+  
+app/views/users/registrations/edit.html.erb:29:in `block in _app_views_users_registrations_edit_html_erb___675888237079326562_70220066567420'
+app/views/users/registrations/edit.html.erb:2:in `_app_views_users_registrations_edit_html_erb___675888237079326562_70220066567420'
+Started GET "/users/edit" for 127.0.0.1 at 2018-09-10 12:57:04 -0400
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/registrations/edit.html.erb within layouts/application (8.6ms)
+  Rendered navigation/_navbar.html.erb (9.1ms)
+Completed 200 OK in 137ms (Views: 134.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/edit" for 127.0.0.1 at 2018-09-10 12:57:24 -0400
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/registrations/edit.html.erb within layouts/application (14.3ms)
+  Rendered navigation/_navbar.html.erb (0.7ms)
+Completed 200 OK in 132ms (Views: 129.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/users/edit" for 127.0.0.1 at 2018-09-10 13:02:14 -0400
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/registrations/edit.html.erb within layouts/application (18.3ms)
+  Rendered navigation/_navbar.html.erb (5.5ms)
+Completed 200 OK in 151ms (Views: 144.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/edit" for 127.0.0.1 at 2018-09-10 13:03:17 -0400
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/registrations/edit.html.erb within layouts/application (5.5ms)
+  Rendered navigation/_navbar.html.erb (1.3ms)
+Completed 200 OK in 72ms (Views: 71.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/users/edit" for 127.0.0.1 at 2018-09-10 13:03:59 -0400
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/registrations/edit.html.erb within layouts/application (9.3ms)
+  Rendered navigation/_navbar.html.erb (0.5ms)
+Completed 200 OK in 81ms (Views: 78.0ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/users/edit" for 127.0.0.1 at 2018-09-10 13:04:48 -0400
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/registrations/edit.html.erb within layouts/application (3.8ms)
+  Rendered navigation/_navbar.html.erb (0.5ms)
+Completed 200 OK in 120ms (Views: 118.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/edit" for 127.0.0.1 at 2018-09-10 13:05:20 -0400
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/registrations/edit.html.erb within layouts/application (9.5ms)
+  Rendered navigation/_navbar.html.erb (0.6ms)
+Completed 200 OK in 72ms (Views: 71.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/users/edit" for 127.0.0.1 at 2018-09-10 13:06:35 -0400
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/registrations/edit.html.erb within layouts/application (10.8ms)
+  Rendered navigation/_navbar.html.erb (0.6ms)
+Completed 200 OK in 109ms (Views: 107.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/edit" for 127.0.0.1 at 2018-09-10 13:07:57 -0400
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/registrations/edit.html.erb within layouts/application (9.2ms)
+  Rendered navigation/_navbar.html.erb (0.5ms)
+Completed 200 OK in 110ms (Views: 109.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/edit" for 127.0.0.1 at 2018-09-10 13:09:58 -0400
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/registrations/edit.html.erb within layouts/application (8.7ms)
+  Rendered navigation/_navbar.html.erb (0.5ms)
+Completed 200 OK in 90ms (Views: 88.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/edit" for 127.0.0.1 at 2018-09-10 13:10:42 -0400
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/registrations/edit.html.erb within layouts/application (4.3ms)
+  Rendered navigation/_navbar.html.erb (0.6ms)
+Completed 200 OK in 87ms (Views: 85.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/users/edit" for 127.0.0.1 at 2018-09-10 13:13:33 -0400
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/registrations/edit.html.erb within layouts/application (9.0ms)
+  Rendered navigation/_navbar.html.erb (0.6ms)
+Completed 200 OK in 94ms (Views: 93.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/edit" for 127.0.0.1 at 2018-09-10 13:13:53 -0400
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/registrations/edit.html.erb within layouts/application (10.4ms)
+  Rendered navigation/_navbar.html.erb (4.6ms)
+Completed 200 OK in 71ms (Views: 69.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/users/edit" for 127.0.0.1 at 2018-09-10 13:14:52 -0400
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/registrations/edit.html.erb within layouts/application (8.6ms)
+  Rendered navigation/_navbar.html.erb (0.5ms)
+Completed 200 OK in 76ms (Views: 72.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/users/edit" for 127.0.0.1 at 2018-09-10 13:15:21 -0400
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/registrations/edit.html.erb within layouts/application (8.5ms)
+  Rendered navigation/_navbar.html.erb (0.5ms)
+Completed 200 OK in 92ms (Views: 90.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/edit" for 127.0.0.1 at 2018-09-10 13:15:57 -0400
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/registrations/edit.html.erb within layouts/application (7.8ms)
+  Rendered navigation/_navbar.html.erb (7.9ms)
+Completed 200 OK in 77ms (Views: 75.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/wikis" for 127.0.0.1 at 2018-09-10 13:16:16 -0400
+Processing by WikisController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering wikis/index.html.erb within layouts/application
+  [1m[36mWiki Load (0.2ms)[0m  [1m[34mSELECT "wikis".* FROM "wikis"[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered wikis/index.html.erb within layouts/application (63.2ms)
+  Rendered navigation/_navbar.html.erb (0.6ms)
+Completed 200 OK in 154ms (Views: 144.3ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/users/edit" for 127.0.0.1 at 2018-09-10 13:16:29 -0400
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/registrations/edit.html.erb within layouts/application (4.4ms)
+  Rendered navigation/_navbar.html.erb (0.6ms)
+Completed 200 OK in 99ms (Views: 97.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/rails/info/routes" for 127.0.0.1 at 2018-09-10 13:16:49 -0400
+Processing by Rails::InfoController#routes as HTML
+  Rendering /home/brent/.rvm/gems/ruby-2.4.1/gems/railties-5.1.6/lib/rails/templates/rails/info/routes.html.erb within layouts/application
+  Rendered collection of /home/brent/.rvm/gems/ruby-2.4.1/gems/actionpack-5.1.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb [28 times] (7.9ms)
+  Rendered /home/brent/.rvm/gems/ruby-2.4.1/gems/actionpack-5.1.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (0.6ms)
+  Rendered /home/brent/.rvm/gems/ruby-2.4.1/gems/railties-5.1.6/lib/rails/templates/rails/info/routes.html.erb within layouts/application (11.6ms)
+Completed 200 OK in 20ms (Views: 19.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/edit" for 127.0.0.1 at 2018-09-10 13:20:03 -0400
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/registrations/edit.html.erb within layouts/application (6.4ms)
+  Rendered navigation/_navbar.html.erb (0.6ms)
+Completed 200 OK in 71ms (Views: 67.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/charges/new" for 127.0.0.1 at 2018-09-10 13:20:09 -0400
+Processing by ChargesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering charges/new.html.erb within layouts/application
+  Rendered charges/_stripe_button.html.erb (0.5ms)
+  Rendered charges/new.html.erb within layouts/application (2.6ms)
+  Rendered navigation/_navbar.html.erb (0.6ms)
+Completed 200 OK in 76ms (Views: 67.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/edit" for 127.0.0.1 at 2018-09-10 13:20:25 -0400
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/registrations/edit.html.erb within layouts/application (16.6ms)
+  Rendered navigation/_navbar.html.erb (0.6ms)
+Completed 200 OK in 107ms (Views: 102.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/edit" for 127.0.0.1 at 2018-09-10 13:22:02 -0400
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/registrations/edit.html.erb within layouts/application (8.4ms)
+  Rendered navigation/_navbar.html.erb (0.6ms)
+Completed 200 OK in 87ms (Views: 83.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/charges/new" for 127.0.0.1 at 2018-09-10 13:22:05 -0400
+Processing by ChargesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering charges/new.html.erb within layouts/application
+  Rendered charges/_stripe_button.html.erb (0.5ms)
+  Rendered charges/new.html.erb within layouts/application (1.2ms)
+  Rendered navigation/_navbar.html.erb (0.6ms)
+Completed 200 OK in 86ms (Views: 84.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/charges/new" for 127.0.0.1 at 2018-09-10 13:25:58 -0400
+Processing by ChargesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering charges/new.html.erb within layouts/application
+  Rendered charges/_stripe_button.html.erb (0.6ms)
+  Rendered charges/new.html.erb within layouts/application (1.5ms)
+  Rendered navigation/_navbar.html.erb (1.5ms)
+Completed 200 OK in 207ms (Views: 205.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/charges/new" for 127.0.0.1 at 2018-09-10 13:26:48 -0400
+Processing by ChargesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering charges/new.html.erb within layouts/application
+  Rendered charges/_stripe_button.html.erb (0.5ms)
+  Rendered charges/new.html.erb within layouts/application (3.9ms)
+  Rendered navigation/_navbar.html.erb (0.5ms)
+Completed 200 OK in 65ms (Views: 63.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/charges/new" for 127.0.0.1 at 2018-09-10 13:28:29 -0400
+Processing by ChargesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering charges/new.html.erb within layouts/application
+  Rendered charges/_stripe_button.html.erb (0.5ms)
+  Rendered charges/new.html.erb within layouts/application (4.1ms)
+  Rendered navigation/_navbar.html.erb (0.6ms)
+Completed 200 OK in 72ms (Views: 66.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/charges/new" for 127.0.0.1 at 2018-09-10 13:29:28 -0400
+Processing by ChargesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering charges/new.html.erb within layouts/application
+  Rendered charges/_stripe_button.html.erb (0.5ms)
+  Rendered charges/new.html.erb within layouts/application (1.9ms)
+  Rendered navigation/_navbar.html.erb (0.5ms)
+Completed 200 OK in 98ms (Views: 96.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/charges/new" for 127.0.0.1 at 2018-09-10 13:33:17 -0400
+Processing by ChargesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering charges/new.html.erb within layouts/application
+  Rendered charges/_stripe_button.html.erb (0.5ms)
+  Rendered charges/new.html.erb within layouts/application (3.1ms)
+  Rendered navigation/_navbar.html.erb (2.6ms)
+Completed 200 OK in 109ms (Views: 105.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/charges/new" for 127.0.0.1 at 2018-09-10 13:33:59 -0400
+Processing by ChargesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering charges/new.html.erb within layouts/application
+  Rendered charges/_stripe_button.html.erb (0.7ms)
+  Rendered charges/new.html.erb within layouts/application (3.8ms)
+  Rendered navigation/_navbar.html.erb (0.6ms)
+Completed 200 OK in 70ms (Views: 68.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/charges/new" for 127.0.0.1 at 2018-09-10 13:35:21 -0400
+Processing by ChargesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering charges/new.html.erb within layouts/application
+  Rendered charges/_stripe_button.html.erb (0.5ms)
+  Rendered charges/new.html.erb within layouts/application (3.8ms)
+  Rendered navigation/_navbar.html.erb (0.6ms)
+Completed 200 OK in 106ms (Views: 104.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/charges/new" for 127.0.0.1 at 2018-09-10 13:35:24 -0400
+Processing by ChargesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering charges/new.html.erb within layouts/application
+  Rendered charges/_stripe_button.html.erb (0.5ms)
+  Rendered charges/new.html.erb within layouts/application (1.2ms)
+  Rendered navigation/_navbar.html.erb (0.5ms)
+Completed 200 OK in 59ms (Views: 57.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/charges/new" for 127.0.0.1 at 2018-09-10 13:35:39 -0400
+Processing by ChargesController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering charges/new.html.erb within layouts/application
+  Rendered charges/_stripe_button.html.erb (3.7ms)
+  Rendered charges/new.html.erb within layouts/application (4.6ms)
+  Rendered navigation/_navbar.html.erb (0.5ms)
+Completed 200 OK in 63ms (Views: 61.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/charges/new" for 127.0.0.1 at 2018-09-10 13:37:14 -0400
+Processing by ChargesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering charges/new.html.erb within layouts/application
+  Rendered charges/_stripe_button.html.erb (0.5ms)
+  Rendered charges/new.html.erb within layouts/application (3.8ms)
+  Rendered navigation/_navbar.html.erb (0.6ms)
+Completed 200 OK in 81ms (Views: 79.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/charges/new" for 127.0.0.1 at 2018-09-10 13:38:34 -0400
+Processing by ChargesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering charges/new.html.erb within layouts/application
+  Rendered charges/_stripe_button.html.erb (0.5ms)
+  Rendered charges/new.html.erb within layouts/application (3.7ms)
+  Rendered navigation/_navbar.html.erb (0.8ms)
+Completed 200 OK in 84ms (Views: 74.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/charges/new" for 127.0.0.1 at 2018-09-10 13:39:11 -0400
+Processing by ChargesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering charges/new.html.erb within layouts/application
+  Rendered charges/_stripe_button.html.erb (0.5ms)
+  Rendered charges/new.html.erb within layouts/application (3.9ms)
+  Rendered navigation/_navbar.html.erb (0.6ms)
+Completed 200 OK in 76ms (Views: 74.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/charges/new" for 127.0.0.1 at 2018-09-10 13:39:33 -0400
+Processing by ChargesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering charges/new.html.erb within layouts/application
+  Rendered charges/_stripe_button.html.erb (0.5ms)
+  Rendered charges/new.html.erb within layouts/application (1.2ms)
+  Rendered navigation/_navbar.html.erb (0.8ms)
+Completed 200 OK in 82ms (Views: 79.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/charges/new" for 127.0.0.1 at 2018-09-10 13:40:37 -0400
+Processing by ChargesController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering charges/new.html.erb within layouts/application
+  Rendered charges/_stripe_button.html.erb (0.5ms)
+  Rendered charges/new.html.erb within layouts/application (1.3ms)
+  Rendered navigation/_navbar.html.erb (4.8ms)
+Completed 200 OK in 76ms (Views: 74.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/users/edit" for 127.0.0.1 at 2018-09-10 13:41:00 -0400
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/registrations/edit.html.erb within layouts/application (8.8ms)
+  Rendered navigation/_navbar.html.erb (0.6ms)
+Completed 200 OK in 84ms (Views: 83.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/edit" for 127.0.0.1 at 2018-09-10 13:43:55 -0400
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/registrations/edit.html.erb within layouts/application (8.1ms)
+  Rendered navigation/_navbar.html.erb (0.9ms)
+Completed 200 OK in 77ms (Views: 75.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/edit" for 127.0.0.1 at 2018-09-10 13:46:54 -0400
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/registrations/edit.html.erb within layouts/application (14.1ms)
+  Rendered navigation/_navbar.html.erb (0.6ms)
+Completed 200 OK in 119ms (Views: 86.7ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/downgrade_account" for 127.0.0.1 at 2018-09-10 13:46:59 -0400
+Processing by UsersController#downgrade_account as HTML
+  Parameters: {"authenticity_token"=>"bvivWN97fQBcrVRjSVK0bAHaWSqJLMmJV+9kSNv45vegwtkvAmbwS6BkUTpuL7UVogEmqupZ2gS98W8t2dgnXQ=="}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.2ms)
+
+
+  
+NoMethodError (undefined method `member!' for #<User:0x007fbabdfaea90>):
+  
+app/controllers/users_controller.rb:3:in `downgrade_account'
+Started POST "/downgrade_account" for 127.0.0.1 at 2018-09-10 13:47:25 -0400
+Processing by UsersController#downgrade_account as HTML
+  Parameters: {"authenticity_token"=>"bvivWN97fQBcrVRjSVK0bAHaWSqJLMmJV+9kSNv45vegwtkvAmbwS6BkUTpuL7UVogEmqupZ2gS98W8t2dgnXQ=="}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (3.4ms)[0m  [1m[33mUPDATE "users" SET "role" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["role", 0], ["updated_at", "2018-09-10 17:47:25.393442"], ["id", 1]]
+  [1m[35m (11.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/users/edit
+Completed 302 Found in 50ms (ActiveRecord: 15.6ms)
+
+
+Started GET "/users/edit" for 127.0.0.1 at 2018-09-10 13:47:25 -0400
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/registrations/edit.html.erb within layouts/application (8.0ms)
+  Rendered navigation/_navbar.html.erb (0.6ms)
+Completed 200 OK in 97ms (Views: 96.0ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/downgrade_account" for 127.0.0.1 at 2018-09-10 13:47:34 -0400
+Processing by UsersController#downgrade_account as HTML
+  Parameters: {"authenticity_token"=>"YnE22dhAo0KKVGWQBHzyPzKhMR7ZdM0u+1aXGuZz1LSsS0CuBV0uCXadYMkjAfNGkXpOnroB3qMRSJx/5FMVHg=="}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/users/edit
+Completed 302 Found in 6ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/users/edit" for 127.0.0.1 at 2018-09-10 13:47:34 -0400
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/registrations/edit.html.erb within layouts/application (7.6ms)
+  Rendered navigation/_navbar.html.erb (0.6ms)
+Completed 200 OK in 102ms (Views: 100.5ms | ActiveRecord: 0.2ms)
+
+
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Started GET "/users/edit" for 127.0.0.1 at 2018-09-10 13:48:14 -0400
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/registrations/edit.html.erb within layouts/application (1574.1ms)
+Completed 500 Internal Server Error in 1588ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `charges_new_path' for #<#<Class:0x007fbac42dd9e0>:0x007fbac414a830>
+Did you mean?  charges_path):
+    32:   <div class="col-md-4 text-center">
+    33:     <% if current_user.role == "standard" %>
+    34:       <h3 class="p-2">Upgrade to Premium</h3>
+    35:       <%= link_to "Upgrade", charges_new_path, class: 'btn btn-block btn-success' %>
+    36:     <% else %>
+    37:       <h3 class="p-2">Downgrade to Standarad</h3>
+    38:       <%= link_to "Downgrade", downgrade_account_path, data: { confirm: "Are you sure?" }, method: :post, class: 'btn btn-block btn-warning' %>
+  
+app/views/users/registrations/edit.html.erb:35:in `_app_views_users_registrations_edit_html_erb___675888237079326562_70220065163480'
+Started GET "/rails/info/routes" for 127.0.0.1 at 2018-09-10 13:48:35 -0400
+Processing by Rails::InfoController#routes as HTML
+  Rendering /home/brent/.rvm/gems/ruby-2.4.1/gems/railties-5.1.6/lib/rails/templates/rails/info/routes.html.erb within layouts/application
+  Rendered collection of /home/brent/.rvm/gems/ruby-2.4.1/gems/actionpack-5.1.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb [27 times] (49.2ms)
+  Rendered /home/brent/.rvm/gems/ruby-2.4.1/gems/actionpack-5.1.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.0ms)
+  Rendered /home/brent/.rvm/gems/ruby-2.4.1/gems/railties-5.1.6/lib/rails/templates/rails/info/routes.html.erb within layouts/application (60.4ms)
+Completed 200 OK in 66ms (Views: 64.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/edit" for 127.0.0.1 at 2018-09-10 13:48:51 -0400
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/registrations/edit.html.erb within layouts/application (13.1ms)
+  Rendered navigation/_navbar.html.erb (0.6ms)
+Completed 200 OK in 165ms (Views: 163.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/edit" for 127.0.0.1 at 2018-09-10 13:51:07 -0400
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/registrations/edit.html.erb within layouts/application (11.9ms)
+  Rendered navigation/_navbar.html.erb (0.5ms)
+Completed 200 OK in 86ms (Views: 84.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/users/edit" for 127.0.0.1 at 2018-09-10 13:51:53 -0400
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/registrations/edit.html.erb within layouts/application (4.9ms)
+  Rendered navigation/_navbar.html.erb (0.6ms)
+Completed 200 OK in 145ms (Views: 124.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/charges/new" for 127.0.0.1 at 2018-09-10 13:51:55 -0400
+Processing by ChargesController#new as HTML
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering charges/new.html.erb within layouts/application
+  Rendered charges/_stripe_button.html.erb (0.5ms)
+  Rendered charges/new.html.erb within layouts/application (1.2ms)
+  Rendered navigation/_navbar.html.erb (0.6ms)
+Completed 200 OK in 72ms (Views: 68.0ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/charges" for 127.0.0.1 at 2018-09-10 13:52:21 -0400
+Processing by ChargesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"DDHi4XSS0RdSH3UKZfPJDzUoyjQA6Ccjy8tVEsEqTHBBudrvosAog3luiuQYnNP4nwLLONeDwLAfyC1KVDiyqg==", "stripeToken"=>"tok_1D8tYcGZZqoeAZu121O5hrFh", "stripeTokenType"=>"card", "stripeEmail"=>"webdeveloperbrent@gmail.com"}
+  [1m[36mUser Load (5.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (3.6ms)[0m  [1m[33mUPDATE "users" SET "role" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["role", 1], ["updated_at", "2018-09-10 17:52:23.799605"], ["id", 1]]
+  [1m[35m (6.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/users/edit
+Completed 302 Found in 2174ms (ActiveRecord: 14.8ms)
+
+
+Started GET "/users/edit" for 127.0.0.1 at 2018-09-10 13:52:23 -0400
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/registrations/edit.html.erb within layouts/application (18.5ms)
+  Rendered navigation/_navbar.html.erb (0.6ms)
+Completed 200 OK in 102ms (Views: 100.7ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/downgrade_account" for 127.0.0.1 at 2018-09-10 13:52:33 -0400
+Processing by UsersController#downgrade_account as HTML
+  Parameters: {"authenticity_token"=>"Mnz+4EZ6ocHzwuBB/HBH23Qn1Tr6CS+j8fyUAfIR7wf8RoiXm2csig8L5RjbDUai1/yqupl8PC4b4p9k8DEurQ=="}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.6ms)[0m  [1m[33mUPDATE "users" SET "role" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["role", 0], ["updated_at", "2018-09-10 17:52:33.667440"], ["id", 1]]
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/users/edit
+Completed 302 Found in 13ms (ActiveRecord: 4.0ms)
+
+
+Started GET "/users/edit" for 127.0.0.1 at 2018-09-10 13:52:33 -0400
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/registrations/edit.html.erb within layouts/application (9.1ms)
+  Rendered navigation/_navbar.html.erb (0.6ms)
+Completed 200 OK in 93ms (Views: 91.3ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2018-09-10 13:55:20 -0400
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"A3vJFCKqR2mzclElWOh9luOE4LaEMaeT+IfZc/qIoKDNQb9j/7fKIk+7VHx/lXzvQF+fNudEtB4SmdIW+KhhCg=="}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 7ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-09-10 13:55:20 -0400
+Processing by HomeController#index as HTML
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-09-10 13:55:20 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.8ms)
+  Rendered users/sessions/new.html.erb within layouts/application (12.2ms)
+  Rendered navigation/_navbar.html.erb (0.7ms)
+Completed 200 OK in 86ms (Views: 85.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2018-09-10 13:57:33 -0400
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QRju7faJpPWcG7Tjnl78YV+DcHVbTHs2Km0gmp8XN3KGFsBz6+myrS4u3TXB3exoGWCMvq6hMESaO5aSIZKFZQ==", "user"=>{"email"=>"bp_standard@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "bp_standard@example.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (3.4ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["current_sign_in_at", "2018-09-10 17:57:33.959296"], ["last_sign_in_at", "2018-09-10 16:22:41.902237"], ["sign_in_count", 7], ["updated_at", "2018-09-10 17:57:33.961344"], ["id", 1]]
+  [1m[35m (3.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 254ms (ActiveRecord: 7.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-09-10 13:57:33 -0400
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.4ms)
+  Rendered navigation/_navbar.html.erb (4.5ms)
+Completed 200 OK in 79ms (Views: 77.4ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2018-09-10 13:57:37 -0400
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"WHbXMhcrj425FiVvPbvZA94RyP7njVKMKQlOciKXu2RGl6riBZThp8NpgJ0oN5G3RWfoov5e9wUKudN0swpdQA=="}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 9ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-09-10 13:57:37 -0400
+Processing by HomeController#index as HTML
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-09-10 13:57:37 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (7.4ms)
+  Rendered users/sessions/new.html.erb within layouts/application (16.3ms)
+  Rendered navigation/_navbar.html.erb (0.7ms)
+Completed 200 OK in 91ms (Views: 90.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-09-10 13:58:48 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.7ms)
+  Rendered users/sessions/new.html.erb within layouts/application (11.6ms)
+  Rendered navigation/_navbar.html.erb (0.8ms)
+Completed 200 OK in 126ms (Views: 92.4ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2018-09-10 13:58:50 -0400
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"e12nqgHWr0cTMM9NTKE5hHWQ+V08yKtF1buTTIZjHbfgS0G5ZbEhMXxYBJSOST/sIBySLx1aPEWdSsNrooQnOg==", "user"=>{"email"=>"bp_standard@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "bp_standard@example.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (7.3ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["current_sign_in_at", "2018-09-10 17:58:51.046719"], ["last_sign_in_at", "2018-09-10 17:57:33.959296"], ["sign_in_count", 8], ["updated_at", "2018-09-10 17:58:51.051481"], ["id", 1]]
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 215ms (ActiveRecord: 9.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-09-10 13:58:51 -0400
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered navigation/_navbar.html.erb (3.8ms)
+Completed 200 OK in 82ms (Views: 79.6ms | ActiveRecord: 2.2ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2018-09-10 13:58:54 -0400
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"CmJ4kd98c7lbu90OjAGnvy4mTt/ivfxa+sMhmfu438HQl5Qmjfv4hqpEcmZpfVvBZknQmY+m/ELAKW1+zXy6DQ=="}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 6ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-09-10 13:58:54 -0400
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.5ms)
+  Rendered navigation/_navbar.html.erb (2.0ms)
+Completed 200 OK in 95ms (Views: 94.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-09-10 14:00:11 -0400
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.5ms)
+  Rendered navigation/_navbar.html.erb (10.8ms)
+Completed 200 OK in 139ms (Views: 138.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-09-10 14:00:14 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.6ms)
+  Rendered users/sessions/new.html.erb within layouts/application (23.7ms)
+  Rendered navigation/_navbar.html.erb (1.1ms)
+Completed 200 OK in 182ms (Views: 180.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2018-09-10 14:00:16 -0400
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1rVmRXDxSUOSs5ra9vadBgbrCgtuoKj+nd8aq8zF6nYVFy1lIEmz0ht4gd9pBfT4gmVmyRsD5znkXu/n8M2fDA==", "user"=>{"email"=>"bp_standard@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "bp_standard@example.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (4.3ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["current_sign_in_at", "2018-09-10 18:00:17.010090"], ["last_sign_in_at", "2018-09-10 17:58:51.046719"], ["sign_in_count", 9], ["updated_at", "2018-09-10 18:00:17.012350"], ["id", 1]]
+  [1m[35m (6.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 234ms (ActiveRecord: 10.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-09-10 14:00:17 -0400
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered navigation/_navbar.html.erb (4.2ms)
+Completed 200 OK in 79ms (Views: 78.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/edit" for 127.0.0.1 at 2018-09-10 14:00:21 -0400
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/registrations/edit.html.erb within layouts/application (10.0ms)
+  Rendered navigation/_navbar.html.erb (0.6ms)
+Completed 200 OK in 98ms (Views: 95.2ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2018-09-10 14:00:25 -0400
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"2XD3fjQ6J/owbweelJusV1sK0QLou3Gw7cIuCT3k9kvjkOflR1iIci1SdRH176IbCZ+NBeQcUjt/h2PrWCy5dA=="}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 5ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-09-10 14:00:25 -0400
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.3ms)
+  Rendered navigation/_navbar.html.erb (1.0ms)
+Completed 200 OK in 97ms (Views: 96.5ms | ActiveRecord: 0.0ms)
+
+
