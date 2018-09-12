@@ -20,8 +20,8 @@
   <tbody>
     <% @wikis.each do |wiki| %>
       <tr>
-        <td><%= wiki.title %></td>
-        <td><%= wiki.body %></td>
+        <td><%= link_to wiki.title, wiki_path(wiki) %></td>
+        <td><%= markdown(wiki.body) %></td>
         <td><%= wiki.private %></td>
         <td><%= wiki.user.email %></td>
         <td><%= link_to 'Show', wiki %></td>
