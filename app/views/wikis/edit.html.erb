@@ -7,4 +7,6 @@
 </div>
 </div>
 <%= render 'form', wiki: @wiki %>
-
+<% if current_user.admin? || (@wiki.user == current_user && current_user.premium?) %>
+    <%= render partial: "collaborators/collaborators", locals: { wiki: @wiki, users: @users } %>
+<% end %>

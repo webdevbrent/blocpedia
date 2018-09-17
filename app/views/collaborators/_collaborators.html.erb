@@ -1,0 +1,28 @@
+<div class="row mt-5">
+  <div class="col">
+    <h2>Collaborators</h2>
+      <ul class="list-group">
+        <% wiki.collaborators.each do |c| %>
+           <% user = User.find(c.user_id) %>
+             <li class="list-group-item">
+             <%= link_to "X", wiki_collaborator_path(@wiki, c), class: 'btn btn-danger btn-sm float-right', method: :delete %>
+             <%= user.email %>
+             </li>
+        <% end %>
+      </ul>
+      <%= simple_form_for [@wiki, Collaborator.new] do |f| %>
+          <%= email_field_tag :collaborator %>
+          <%= f.submit "Add collaborator", class: 'btn btn-primary' %>
+      <% end %>
+  </div>
+  <div class="col">
+    <h2>Users</h2>
+      <ul class="list-group">
+        <% users.each do |u| %>
+        <li class="list-group-item">
+          <%= u.email %>
+        </li>
+        <% end %>
+      </ul>
+  </div>
+</div>
